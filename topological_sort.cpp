@@ -54,5 +54,7 @@ int main() {
 
     display();
     topologicalSort();
+
+    getchar();
     return 0;
 }
