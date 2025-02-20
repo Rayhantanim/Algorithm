@@ -11,7 +11,9 @@ void calculateFCFS(vector<Process> &proc){
     int time = 0;
     for (int i =0; i < proc.size(); i++){
         if (time < proc[i].at)
+        {
             time = proc[i].at;
+        }
 
         proc[i].ct = time + proc[i].bt;
         proc[i].tat = proc[i].ct - proc[i].at;
