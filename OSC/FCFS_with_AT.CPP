@@ -58,4 +58,22 @@ int main(){
     calculateFCFS(proc);
     display(proc);
 }
-// 3 5 2 2 4 4 2
+
+// 5 0 4 2 5 1 4 3 6 4 2
+// Output:
+// Enter number of processes: 5
+// Arrival & bt Time for P1: 0 4
+// Arrival & bt Time for P2: 2 5
+// Arrival & bt Time for P3: 1 4
+// Arrival & bt Time for P4: 3 6
+// Arrival & bt Time for P5: 4 2
+
+// ID      Arrival Burst   Completion      Waiting Turnaround
+// 1       0       4       4               0       4
+// 3       1       4       8               3       7
+// 2       2       5       13              6       11
+// 4       3       6       19              10      16
+// 5       4       2       21              15      17
+
+// Avg Waiting Time: 6.8
+// Avg tat Time: 11

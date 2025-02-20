@@ -43,3 +43,16 @@ int main() {
 	 calculateFCFS(proc); 
 	 display(proc); 
 }
+// 3 5 3 8
+// Output:
+// Enter number of processes: 3
+// Burst Time for P1: 5
+// Burst Time for P2: 3
+// Burst Time for P3: 8
+// ID      Burst   Completion      Waiting Turnaround
+// 1       5       5               0       5
+// 2       3       8               5       8
+// 3       8       16              8       16
+// Avg Waiting Time: 4.33333
+// Avg Turnaround Time: 9.66667
+//
