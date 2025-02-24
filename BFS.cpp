@@ -46,12 +46,7 @@ int main() {
     int st;
     cout << "Enter the starting node: ";
     cin >> st;
-
     cout << "BFS starting from node " << st << ": ";
-    BFS(graph, st);
-
-    cin.ignore(); 
-    getchar();
-    
+    BFS(graph, st); 
     return 0;
 }
