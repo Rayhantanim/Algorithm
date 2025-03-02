@@ -1,47 +1,50 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int vertices = 8; 
+const int vertices = 8;
 vector<int> graph[vertices];
 bool visited[vertices] = {false};
-stack<int> Stack; 
+stack<int> Stack;
 
-void dfs(int node) {
+void dfs(int node)
+{
     visited[node] = true;
-    for(int i : graph[node]) {
-        if(!visited[i]) {
+    for (int i : graph[node])
+    {
+        if (!visited[i])
+        {
             dfs(i);
         }
     }
     Stack.push(node);
 }
+void topologicalSort()
+{
+    for (int i = 0; i < vertices; i++)
+    {
+        if (!visited[i])
+        {
+            dfs(i);
+        }
+    }
+}
 
-void display(){
+void display()
+{
     cout << "The Graph:" << endl;
-    for (int i = 0; i < vertices; i++){
+    for (int i = 0; i < vertices; i++)
+    {
         cout << i << " -> ";
-        for (int j = 0; j < graph[i].size(); j++){
+        for (int j = 0; j < graph[i].size(); j++)
+        {
             cout << graph[i][j] << ' ';
         }
         cout << endl;
     }
 }
 
-void topologicalSort() {
-    for(int i = 0; i < vertices; i++) {
-        if(!visited[i]) {
-            dfs(i);
-        }
-    }
-    cout << "Topological Sort: ";
-    while(!Stack.empty()) {
-        cout << Stack.top() << " ";
-        Stack.pop();
-    }
-    cout << endl;
-}
-
-int main() {
+int main()
+{
     graph[0].push_back(1);
     graph[0].push_back(2);
     graph[0].push_back(3);
@@ -55,6 +58,14 @@ int main() {
     display();
     topologicalSort();
 
+    cout << "Topological Sort: ";
+    while (!Stack.empty())
+    {
+        cout << Stack.top() << " ";
+        Stack.pop();
+    }
+    cout << endl;
+    
     getchar();
     return 0;
 }
