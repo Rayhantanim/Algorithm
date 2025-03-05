@@ -4,12 +4,12 @@ using namespace std;
 vector<int> graph[5];
 bool visited[5];
 
-void dfs(int source)
+void dfs(int node)
 {
-    visited[source] = 1;
-    for (int i = 0; i < graph[source].size(); i++)
+    visited[node] = 1;
+    for (int i = 0; i < graph[node].size(); i++)
     {
-        int next = graph[source][i];
+        int next = graph[node][i];
         if (visited[next] == 0)
             dfs(next);
     }

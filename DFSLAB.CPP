@@ -19,6 +19,7 @@ int main() {
     vector<vector<int>> graph(n);
     bool visited[n] = {false};
 
+    
     graph[0] = {1, 3};
     graph[1] = {4, 5};
     graph[2] = {};
